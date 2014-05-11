@@ -233,6 +233,19 @@ section {
 	width: 100%;
 }
 
+.justgrimes {
+ width: 370px;
+ height:370px;
+ display:block;
+	display: inline-block;
+	position: relative;
+ background:transparent url('../images/justin.jpg') center top no-repeat;
+}
+
+.justgrimes:hover {
+   background-image: url('../images/justin2.jpg');
+}
+
 .hover-effect i {
 	left: 50%;
 	margin: -20px 0 0 -20px;
