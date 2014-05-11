@@ -44,27 +44,6 @@
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
-		<script>
-			function getData(data) {
-				var data = [];
-			    data[0] = document.getElementById("input-name").value;
-			    data[1] = document.getElementById("input-email").value;
-			    data[2] = document.getElementById("select-guests").value;
-			    data[3] = document.getElementById("select-attending").value;
-			     google.script.run.setData(data);
-			}
-			function doGet(e) {
-      			return HtmlService.createHtmlOutputFromFile('index');
-    		}
-
-    		function setData(data) {
-      			var ss = SpreadsheetApp.openById("1zaTQiW6oMd4568T5JFY2Vuwmy60mSkdo5wc5dolCRxM").getActiveSheet();
-		      	var lastRow = ss.getLastRow();
-		      	ss.getRange(lastRow+1, 1).setValue(data[0]);
-		      	Logger.log(data[0]);
-		      return 0
-			}
-		</script>
 	</head>
 	<body >
 
@@ -665,8 +644,70 @@
 				<div class="heading">
 					<h2>RSVP</h2>
 					<p><span></span><i class="fa fa-heart"></i><span></span></p>
+				</div> 
+
+				<form action="https://docs.google.com/forms/d/15rlrGlc1qk10fjpZZqccFvP5hCd0Eg1gzwqRjBcEJEQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+
+				<div class="row">
+					<div class="ss-form-question errorbox-good" role="listitem">
+						<div dir="ltr" class="ss-item ss-item-required ss-text">
+							<div class="ss-form-entry">
+								<div class="form-group col-xs-12">Name
+									<input type="text" name="entry.1995249611" value="" class="form-control"  id="entry_1995249611" dir="auto" aria-label="Name  " aria-required="true" required="" title="" placeholder="Ron Swanson">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<form role="form">
+
+				<div class="row">
+					<div class="ss-form-question errorbox-good" role="listitem">
+						<div dir="ltr" class="ss-item ss-item-required ss-text">
+							<div class="ss-form-entry">
+								<div class="form-group col-xs-12">e-mail
+									<input type="text" name="entry.2045656561" value="" class="form-control" id="entry_2045656561" dir="auto" aria-label="e-mail  " aria-required="true" required="" title="" placeholder="name@domain.com">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group col-xs-12">Number of guests
+						<select name="entry.638643587" id="entry_638643587" aria-label="Number of guests  " aria-required="true" required="">	
+							<option value=""></option>
+							<option value="1">1</option> 
+							<option value="2">2</option> 
+							<option value="3">3</option> 
+							<option value="4">4</option>
+						</select>
+					</div>
+
+
+					<div class="form-group col-xs-12">I&#39;d like to attend...
+						<select name="entry.1693422958" id="entry_1693422958" aria-label="I&#39;d like to attend...  ">
+							<option value=""></option>
+							<option value="Wedding (June 7)">Wedding (June 7)</option> 
+							<option value="Wedding + Reception (June 7)">Wedding + Reception (June 7)</option> 
+							<option value="DC Party (June 14)">DC Party (June 14)</option> 
+							<option value="WV Party (June 28)">WV Party (June 28)</option> 
+							<option value="Toledo Party (July 4th)">Toledo Party (July 4th)</option>
+						</select>
+					</div>
+				</div>
+
+				<input type="hidden" name="draftResponse" value="[,,&quot;4272531519012790176&quot;]">
+				<input type="hidden" name="pageHistory" value="0">
+				<input type="hidden" name="fbzx" value="4272531519012790176">
+
+				<div class="row">
+					<input type="submit" name="submit" value="Submit" id="ss-submit" class="btn btn-lg" >
+				</div>
+			</form>
+		</div>
+
+				<!--
+				<form action="https://docs.google.com/forms/d/15rlrGlc1qk10fjpZZqccFvP5hCd0Eg1gzwqRjBcEJEQ/formResponse" method="POST" id="ss-form" target="_self" onsubmit="" role="form">
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<label for="input-name">Name</label>
@@ -705,7 +746,7 @@
 					<div class="row">
 						<button type="submit" class="btn btn-lg" onclick="getData();">I'm attending</button>
 					</div>
-				</form>
+				</form> -->
 			</div>
 	</section>
 			<!-- ========== RSVP END ========== -->
