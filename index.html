@@ -44,7 +44,27 @@
 		<script src="js/html5shiv.js"></script>
 		<script src="js/respond.min.js"></script>
 		<![endif]-->
+		<script>
+			function getData(data) {
+				var data = [];
+			    data[0] = document.getElementById("input-name").value;
+			    data[1] = document.getElementById("input-email").value;
+			    data[2] = document.getElementById("select-guests").value;
+			    data[3] = document.getElementById("select-attending").value;
+			     google.script.run.setData(data);
+			}
+			function doGet(e) {
+      			return HtmlService.createHtmlOutputFromFile('index');
+    		}
 
+    		function setData(data) {
+      			var ss = SpreadsheetApp.openById("1zaTQiW6oMd4568T5JFY2Vuwmy60mSkdo5wc5dolCRxM").getActiveSheet();
+		      	var lastRow = ss.getLastRow();
+		      	ss.getRange(lastRow+1, 1).setValue(data[0]);
+		      	Logger.log(data[0]);
+		      return 0
+			}
+		</script>
 	</head>
 	<body >
 
@@ -308,17 +328,18 @@
 					<div class="col-sm-4" data-scroll-reveal="enter from the left after 0.25s">
 						<div class="blog-short">
 							<img src="images/teds.jpg" class="img-responsive" alt="" />
-							<h5>Dinner Rehersal</h5>
-							<h6>June 6th, 2014</h6>
+							<h5>Dinner "Rehersal"</h5>
+							<h6>June 6th, 2014 5:30 PM</h6>
 							<p><a href="tedsbulletin14thstreet.com">Ted's Bulletin</a></p>
-							<p>1818 14th Street NW, Washington DC 20009</p>				
+							<p>1818 14th Street NW, Washington DC 20009</p>	
+							<p>Nothing to rehearse. Just dinner and drinks.</p>			
 						</div>
 					</div>
-					<div class="col-sm-4" data-scroll-reveal>
+					<div class="col-sm-4" data-scroll-reveal="enter from the right after 0.5s">
 						<div class="blog-short">
 							<img src="images/mpark.jpg" class="img-responsive" alt="" />
 							<h5>Wedding Ceremony</h5>
-							<h6>June 7th, 2014</h6>
+							<h6>June 7th, 2014 11 AM</h6>
 							<p><a href="http://www.nps.gov/mehi/index.htm">Meridian Hill Park</a></p>
 							<p>Ceremony is open and short.</p>
 							<p>Officiant: Jeff Discala</p>
@@ -328,7 +349,7 @@
 						<div class="blog-short">
 							<img src="images/dukes.jpg" class="img-responsive" alt="" />
 							<h5>Wedding Reception</h5>
-							<h6>June 7th, 2014</h6>
+							<h6>June 7th, 2014 12 PM - 3PM</h6>
 							<p><a href="http://dukesgrocery.com/">Duke's Grocery</a></p>
 							<p>1513 17th St NW, Washington, DC 20036</p>
 							<p>Small private reception. Food will be brunch; bar will be open</p>
@@ -347,36 +368,32 @@
 							<img src="images/farm.jpg" class="img-responsive" alt="" />
 							<h5>Party at Family Farm (Grimeses)</h5>
 							<h6>June 28th, 2014</h6>
-							<p>TBD</p>
-				
+							<p>Cook out at the family farm. Hotdogs, hamburgers, and family.</p>
 						</div>
 					</div>
-					<div class="col-sm-4" data-scroll-reveal>
+					<div class="col-sm-4" data-scroll-reveal="enter from the right after 0.5s">
 						<div class="blog-short">
 							<img src="images/ohio.jpg" class="img-responsive" alt="" />
 							<h5>Party in Toledo (Galloways)</h5>
 							<h6>July 4th, 2014</h6>
 							<p>TBD</p>
-
 						</div>
 					</div>
-					<div class="col-sm-4" data-scroll-reveal>
+					<div class="col-sm-4" data-scroll-reveal="enter from the right after 0.5s">
 						<div class="blog-short">
 							<img src="images/seattle.jpg" class="img-responsive" alt="" />
 							<h5>Seattle &amp; Portland (Honeymoons)</h5>
 							<h6>July 17-24th, 2014</h6>
 							<p>You probably aren't going to join us but we would love <a href="https://foursquare.com/justgrimes/list/honeymoon">recommendations.</a></p>
-
 						</div>
 					</div>
-					<div class="col-sm-4" data-scroll-reveal>
+					<div class="col-sm-4" data-scroll-reveal="enter from the right after 0.5s">
 						<div class="blog-short">
 							<img src="images/kraken.jpg" class="img-responsive" alt="" />
 							<h5>Kraken Mare, Lakes of Titan</h5>
 							<h6>TBD, 2014</h6>
 							<p>Toxic methane environment</p>
 							<p><a href="http://weknowmemes.com/wp-content/uploads/2011/11/watch-out-we-got-a-badass-over-here-meme.png">Requires a ship of the imagination</a></p>
-
 						</div>
 					</div>
 				</div>
@@ -686,14 +703,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<button type="submit" class="btn btn-lg">I'm attending</button>
+						<button type="submit" class="btn btn-lg" onclick="getData();">I'm attending</button>
 					</div>
 				</form>
 			</div>
-
+	</section>
 			<!-- ========== RSVP END ========== -->
 
-		</section>
+		
 
 		<!-- ========== REGISTRY START ========== -->
 
@@ -710,11 +727,13 @@
 							<a href="http://www.amazon.com/registry/wedding/MUHE4N5WCYXA"><span></span><img src="images/amazon.jpg" class="img-responsive" alt="" /></a>
 						</div>
 						<div class="item">
-							<a href=""><span></span><img src="images/honeyfund.jpg" class="img-responsive" alt="" /></a>
+							<a href="http://www.honeyfund.com/wedding/ggw2014"><span></span><img src="images/honeyfund.jpg" class="img-responsive" alt="" /></a>
 						</div>
+						<!--
 						<div class="item">
 							<a href=""><span></span><img src="http://placehold.it/130x50.png" class="img-responsive" alt="" /></a>
 						</div>
+						-->
 						</div>
 					</div>
 				</div>
