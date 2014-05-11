@@ -1,0 +1,669 @@
+/*!
+* Perfect Couple - Wedding Site Theme
+* Copyright 2014 Marcin Banaszek, Coffeecream Themes
+*/
+
+/* GLOBAL STYLES
+=========================================================================================*/
+
+body {
+	overflow-x: hidden;
+}
+
+.inner {
+	padding-top: 97px;
+}
+
+h1 {
+	color: #fff;
+	font-family: 'Engagement', cursive;
+	font-weight: normal;
+	margin: 0;
+}
+
+h2 {
+	font-family: 'Engagement', cursive;
+	font-weight: normal;
+	margin: 0;
+}
+
+h3,h4,h5,h6 {
+	margin: 3em 0;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+h6 {
+	color: #d6516d;
+}
+
+a,
+button {
+	transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-o-transition: all .5s ease;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+p {
+	margin: 0 0 1em;
+}
+
+hr {
+	border-top: 3px solid #eee;
+	margin: 30px 0;
+}
+
+img {
+	display: inline-block !important;
+}
+
+section {
+	padding: 80px 0;
+}
+
+.btn {
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+}
+
+.btn-lg {
+	font-size: 1em;
+	padding: 15px 30px;
+}
+
+/* MAIN BANNER
+=========================================================================================*/
+
+.tint {
+	background: -moz-linear-gradient(-45deg,  rgba(214,81,110,0.2) 0%, rgba(214,81,110,0.2) 1%, rgba(82,178,189,0.2) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(214,81,110,0.2)), color-stop(1%,rgba(214,81,110,0.2)), color-stop(100%,rgba(82,178,189,0.2))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(214,81,110,0.2) 0%,rgba(214,81,110,0.2) 1%,rgba(82,178,189,0.2) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(214,81,110,0.2) 0%,rgba(214,81,110,0.2) 1%,rgba(82,178,189,0.2) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(214,81,110,0.2) 0%,rgba(214,81,110,0.2) 1%,rgba(82,178,189,0.2) 100%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(214,81,110,0.2) 0%,rgba(214,81,110,0.2) 1%,rgba(82,178,189,0.2) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33d6516e', endColorstr='#3352b2bd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.welcome {
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	top:33%;
+	width: 100%;
+	-webkit-transform: translateY(-33%);
+	-moz-transform: translateY(-33%);
+	-ms-transform: translateY(-33%);
+	-o-transform: translateY(-33%);
+	transform: translateY(-33%);
+}
+
+.welcome p {
+	font-size: 18px;
+	letter-spacing: 0.4em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.welcome span {
+	border: 0;
+	border-top: 1px solid #fff;
+	display: inline-block;
+	margin: 6px 10px;
+	width: 150px;
+}
+
+.welcome i {
+	font-size: 18px;
+}
+
+/* COUNTDOWN
+=========================================================================================*/
+
+.countdown {
+	bottom: 30px;
+	left: 50%;
+	margin-left: -225px;
+	position: absolute;
+	width: 450px;
+	z-index: 100;
+}
+
+/* NAVBAR
+=========================================================================================*/
+
+.navbar {
+	border-radius: 0;
+	text-transform: uppercase;
+}
+
+.navbar.fixed {
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.navbar-brand {
+	padding: 20px 15px;
+	font-size: auto;
+	line-height: auto;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background: none !important;
+}
+
+.dropdown-menu {
+	padding: 0;
+}
+
+.dropdown-menu > li > a {
+	padding: 7px 20px;
+	text-transform: none;
+}
+
+/* HEADINGS
+=========================================================================================*/
+
+.heading {
+	padding-bottom: 60px;
+}
+
+.heading span {
+	border: 0;
+	border-top: 1px solid #d6516d;
+	display: inline-block;
+	margin: 5px 10px;
+	width: 40px;
+}
+
+.heading i {
+	color: #d6516d;
+}
+
+/* MAIN BANNER
+=========================================================================================*/
+
+.mobile-divider {
+	display: none;
+}
+
+.hover-effect {
+	display: inline-block;
+	position: relative;
+}
+
+.hover-effect span {
+	background: #d6516d;
+	color: #fff;
+	display: block;
+	height: 0;
+	left: 50%;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	width: 0;
+	transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+	-o-transition: all .2s ease;
+}
+
+.hover-effect:hover span {
+	height: 100%;
+	left: 0;
+	opacity: 0.8;
+	top: 0;
+	width: 100%;
+}
+
+.hover-effect i {
+	left: 50%;
+	margin: -20px 0 0 -20px;
+	position: absolute;
+	top: 0;
+	transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+}
+
+.hover-effect:hover i {
+	top: 50%;
+}
+
+/* SOCIAL ICONS
+=========================================================================================*/
+
+.social-icons {
+	list-style: none;
+	padding: 1em 0;
+}
+
+.social-icons li {
+	display: inline-block;
+	margin: 0 2px;
+}
+
+.social-icons a {
+	color: #333;
+	border: 1px solid #333;
+	border-radius: 50%;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	width: 30px;
+}
+
+.social-icons a:hover {
+	border: 1px solid #d6516d;
+	color: #d6516d;
+}
+
+/* PEOPLE & ACCOMMODATION
+=========================================================================================*/
+
+#people h5,
+#accommodation h5 {
+	margin: 0 0 8px;
+}
+
+#people h6,
+#accommodation h6 {
+	margin: 0 0 15px;
+}
+
+.row-margin {
+	margin-bottom: 60px;
+}
+
+/* EVENTS & BLOG
+=========================================================================================*/
+
+.blog-short {
+	background: #fff;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
+.blog-short h5,
+.blog-short h6,
+.blog-short p {
+	padding: 0 30px;
+}
+
+.blog-short h5 {
+	margin-bottom: 10px;
+}
+
+.blog-short h6 {
+	margin-top: 0;
+}
+
+.post {
+	padding-bottom: 80px;
+}
+
+.post-header {
+	border-bottom: 1px solid #ddd;
+	color: #222;
+	line-height: 1.5em;
+	margin: 0 0 0.5em;
+	padding: 0 0 1em;
+}
+
+.post-header span {
+	color: #d6516d;
+}
+
+.post-meta {
+	color: #ccc;
+	margin-bottom: 1.5em;
+}
+
+.post-meta span {
+	margin-right: 15px;
+}
+
+.post-meta i {
+	margin-right: 7px;
+}
+
+.post-intro {
+	margin-bottom: 2em;
+}
+
+.comments {
+	border-top: 1px solid #ddd;
+	margin-top: 80px;
+	padding-top: 80px;
+}
+
+.media {
+	border-top: 1px solid #ddd;
+	margin-top: 30px !important;
+	padding-top: 30px;
+}
+
+.media-photo {
+	max-width: 25%;
+}
+
+/* FUN FACTS
+=========================================================================================*/
+
+#facts {
+	overflow: hidden;
+	position: relative;
+}
+
+#facts .parallax {
+	background: url(http://placehold.it/1600x1600.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#facts h3 {
+	color: #fff;
+	font-size: 60px;
+	letter-spacing: normal;
+	margin: 0;
+}
+
+#facts h6 {
+	color: #000;
+	margin: 0;
+}
+
+#facts .img-circle {
+	background: #d6516d;
+	height: 213px;
+	padding-top: 60px;
+}
+
+/* GALLERY
+=========================================================================================*/
+
+.gallery {
+	list-style: none;
+	padding: 0;
+}
+
+.gallery li {
+	padding-bottom: 30px;
+}
+
+/* LOCATION
+=========================================================================================*/
+
+#location {
+	padding: 0;
+	position: relative;
+}
+
+#map-canvas {
+	height: 600px;
+	width: 100%;
+}
+
+/* RSVP
+=========================================================================================*/
+
+#rsvp {
+	background: #d6516d;
+	border-radius: 8px;
+	color: #222;
+	margin-right: -470px;
+	padding: 50px;
+	position: absolute;
+	right: 50%;
+	top: 50px;
+	width: 400px;
+	z-index: 100;
+}
+
+#rsvp .heading {
+	padding-bottom: 20px;
+}
+
+#rsvp .heading i {
+	color: #fff;
+}
+
+#rsvp .heading span {
+	border-color: #fff;
+}
+
+#rsvp .btn {
+	background: #222;
+	color: #fff;
+	margin-top: 20px;
+}
+
+/* REGISTRY
+=========================================================================================*/
+
+#registry {
+	letter-spacing: 0.2em;
+	padding: 30px 0;
+	text-transform: uppercase;
+}
+
+#registry .item {
+	padding: 15px;
+	text-align: center;
+}
+
+#registry .item a {
+	border: 1px solid #ddd;
+	display: block;
+	height: 80px;
+	padding: 15px;
+	position: relative;
+}
+
+#registry .item span {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#registry .item img {
+	max-height: 50px;
+	vertical-align: middle;
+}
+
+/* FOOTER
+=========================================================================================*/
+
+footer {
+	background: #222;
+	padding: 30px 0;
+}
+
+/* RESPONSIVE STYLES
+=========================================================================================*/
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Large devices (large desktops, 1200px and up)
+----------------------------------------------------------------------------------------*/
+@media (min-width: 1200px) {
+
+	#facts .img-circle {
+		height: 263px;
+		padding-top: 75px;
+	}
+
+	#facts h3 {
+		font-size: 80px;
+	}
+
+	#rsvp {
+		margin-right: -560px;
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up)
+----------------------------------------------------------------------------------------*/
+@media (max-width: 991px) {
+
+	#facts .img-circle {
+		height: 158px;
+		padding: 37px 20px 0 20px;
+	}
+
+	#facts h3 {
+		font-size: 50px;
+	}
+
+	#rsvp {
+		margin-right: -360px;
+	}
+
+}
+
+/* Small devices (tablets, 768px and up)
+----------------------------------------------------------------------------------------*/
+@media (max-width: 767px) {
+
+	.btn {
+		white-space: normal;
+	}
+
+	.text-left,
+	.text-right,
+	.col-sm-3 {
+		text-align: center !important;
+	}
+
+	.mobile-divider {
+		color: #000;
+		display: block;
+		margin: 30px 0;
+		opacity: 0.1;
+		text-align: center;
+	}
+
+	.mobile-divider span {
+		border-top: 1px solid #000;
+		display: inline-block;
+		margin: 4px 10px;
+		width: 90px;
+	}
+
+	h1 {
+		font-size: 54px;
+	}
+
+	section {
+		padding: 30px 0;
+	}
+
+	.welcome span {
+		width: 90px;
+	}
+
+	.welcome {
+		top:20%;
+		width: 100%;
+	}
+
+	.heading {
+		padding-bottom: 30px;
+	}
+
+	.post {
+		text-align: center;
+	}
+
+	.post-header {
+		margin: 1em 0 0.5em;
+		padding: 0 0 1em;
+	}
+
+	.post-header span {
+		display: block;
+	}
+
+	.post-meta span {
+		display: block;
+		margin: 0;
+	}
+
+	.countdown {
+		margin-left: -140px;
+		width: 280px;
+	}
+
+	.countdown-show5 .countdown-section {
+		width: 51px !important;
+	}
+
+	.countdown-section {
+		font-size: 70% !important;
+		margin: 0 2px !important;
+		padding: 0 0 10px !important;
+	}
+
+	#people h5, #accommodation h5 {
+		margin: 20px 0 8px;
+	}
+
+	#facts .img-circle {
+		height: 120px;
+		margin: 10px auto;
+		padding: 20px 20px 0 20px;
+		width: 120px;
+	}
+
+	#facts h3 {
+		font-size: 40px;
+	}
+
+	#facts h6 {
+		font-size: 12px;
+	}
+
+	#map-canvas {
+		height: 250px;
+	}
+
+	#rsvp {
+		border-radius: 0;
+		margin-right: 0;
+		padding: 60px 15px;
+		position: relative;
+		right: auto;
+		top: auto;
+		width: 100%;
+	}
+
+}
