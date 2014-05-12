@@ -37,6 +37,10 @@ h6 {
 	color: #d6516d;
 }
 
+.x {
+	font-size: 2em;
+}
+
 a,
 button {
 	transition: all .5s ease;
