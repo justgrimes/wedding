@@ -1,0 +1,1 @@
+LICENSE: This uses a modified template called <a href="http://coffeecreamthemes.com/themes/perfectcouple/site/">Perfect Couple - Responsive Wedding Site Template</a> by Coffeecream purchased from ThemeForest. See <a href="http://themeforest.net/licenses/regular">Coffeecream/Themeforest for license information</a> It's only $13 so just buy it.
